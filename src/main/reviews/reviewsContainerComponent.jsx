@@ -40,20 +40,11 @@ const ReviewsContainerComponent = () => {
     // DELETE REVIEWS
     const deleteReviewFunction = async(deleteReviewId) => {
         const deleteReviewResponse = await fetch(`https://trip-wiz-api.herokuapp.com/api/reviews/${deleteReviewId}`, {
-            method: "DELETE"
+            method: "DELETE",
         });
-        const deleteReviewData = await deleteReviewResponse.json();
-        if(deleteReviewData.id === true) {
-            console.log(deleteReviewData);
-            const newReviews = reviews.filter(n=> n.id !== deleteReviewData.id)
-            setReviews(newReviews)
-        }else {
-
-        }
-
-        
-
         console.log('delete functioning working')
+        const newReviews = reviews.filter(n=> n.id !== deleteReviewId)
+        setReviews(newReviews)
         toggleReviewModalFunction()
     }
 

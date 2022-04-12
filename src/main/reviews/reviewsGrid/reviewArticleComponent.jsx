@@ -2,17 +2,12 @@ import React, {useState} from 'react';
 import ReviewModalContainerComponent from './reviewModalContainerComponent';
 
 const ReviewArticleComponent = (props) => {
-    // const [showReviewModal, setShowReviewModal] = useState(false)
-    // const toggleReviewModalFunction = () => {
-    //     setShowReviewModal(!showReviewModal)
-    // }
 
     const [oneReviewInfo, setOneReviewInfo] = useState({})
     const getOneReviewFunction = async(reviewId) => {
         const getOneReviewInfoResponse = await fetch(`https://trip-wiz-api.herokuapp.com/api/reviews/${reviewId}`)
         const getOneReviewInfoData = await getOneReviewInfoResponse.json()
         setOneReviewInfo(getOneReviewInfoData);
-        console.log(getOneReviewInfoData)
     }
 
     const reviews = props.reviews.map(review => {
