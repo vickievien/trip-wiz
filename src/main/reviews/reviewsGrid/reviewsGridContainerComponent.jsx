@@ -4,7 +4,7 @@ import ReviewArticleComponent from './reviewArticleComponent';
 const ReviewsGridContainerComponent = (props) => {
     return (
         <section className='reviews-grid-container'>
-            <ReviewArticleComponent reviews={props.reviews}/>
+            <ReviewArticleComponent reviews={props.reviews} deleteReviewFunction={props.deleteReviewFunction} toggleReviewModalFunction={props.toggleReviewModalFunction} showReviewModal={props.showReviewModal}  />
         </section>
     )
 }

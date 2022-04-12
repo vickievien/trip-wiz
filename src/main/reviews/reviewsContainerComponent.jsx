@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import '../../App.css';
-import ReviewsGridContainerComponent from './reviewsGridContainerComponent';
+import NewReviewModalContainerComponent from './newReviewModal/newReviewModalContainerComponent';
+import ReviewSectionTitleContainerComponent from './reviewSectionHeading/reviewSectionTitleContainerComponent';
+import ReviewsGridContainerComponent from './reviewsGrid/reviewsGridContainerComponent';
 
 
 const ReviewsContainerComponent = () => {
@@ -12,23 +14,50 @@ const ReviewsContainerComponent = () => {
         setShowNewReviewModal(!showNewReviewModal)
     }
 
-    const [showReviewDetailsModal, setShowReviewDetailsModal] = useState(false);
-    const toggleShowReviewDetailsModal = () => {
-        setShowReviewDetailsModal(!showReviewDetailsModal)
+    const [showReviewModal, setShowReviewModal] = useState(false)
+    const toggleReviewModalFunction = () => {
+        setShowReviewModal(!showReviewModal)
     }
 
     // GET REVIEWS
         // SEE USE EFFECT
 
     // CREATE NEW REVIEWS
-    // const createNewReviewFunction = async(newReview) => {
-        
-    // }    
-
+    const createNewReviewFunction = async(newReview) => {
+       const postNewReviewResponse = await fetch('https://trip-wiz-api.herokuapp.com/api/reviews/', {
+           method: "POST",
+           body: JSON.stringify(newReview),
+           headers: {
+               "Content-type": "application/json"
+           }
+       });
+       const newReviewData = await postNewReviewResponse.json();
+       setReviews([newReviewData, ...reviews]); 
+    }    
 
     // UPDATE REVIEWS
 
     // DELETE REVIEWS
+    const deleteReviewFunction = async(deleteReviewId) => {
+        const deleteReviewResponse = await fetch(`https://trip-wiz-api.herokuapp.com/api/reviews/${deleteReviewId}`, {
+            method: "DELETE"
+        });
+        const deleteReviewData = await deleteReviewResponse.json();
+        if(deleteReviewData.id === true) {
+            console.log(deleteReviewData);
+            const newReviews = reviews.filter(n=> n.id !== deleteReviewData.id)
+            setReviews(newReviews)
+        }else {
+
+        }
+
+        
+
+        console.log('delete functioning working')
+        toggleReviewModalFunction()
+    }
+
+
 
     // USE EFFECT FOR GET REVIEWS
     // useEffect(getReviewsFunction, []);
@@ -45,11 +74,10 @@ const ReviewsContainerComponent = () => {
 
     return (
         <main className='reviews-main-container'>
-            <h2>Reviews</h2>
-            <a>Add a Review</a>
-            <ReviewsGridContainerComponent reviews={reviews}/>
+            <ReviewSectionTitleContainerComponent toggleNewReviewModal={toggleNewReviewModal} />
+            <NewReviewModalContainerComponent toggleNewReviewModal={toggleNewReviewModal} showNewReviewModal={showNewReviewModal} createNewReviewFunction={createNewReviewFunction}/>
+            <ReviewsGridContainerComponent reviews={reviews} deleteReviewFunction={deleteReviewFunction} toggleReviewModalFunction={toggleReviewModalFunction} showReviewModal={showReviewModal} />
         </main>
-
     )
 }
 
