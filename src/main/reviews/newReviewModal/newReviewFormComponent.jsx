@@ -49,12 +49,12 @@ const NewReviewFormComponent = (props) => {
 
             <div className='form-input-container'>
                 <label className='form-label' htmlFor="trip_start_date">Trip Date (Start):</label>
-                <input className='form-input' type="date" name="trip_start_date" onChange={handleInputChangeFunction} placeholder="e.g. 01/01/2021" required/>
+                <input className='form-date' type="date" name="trip_start_date" onChange={handleInputChangeFunction} placeholder="e.g. 01/01/2021" required/>
             </div>
 
             <div className='form-input-container'>
                 <label className='form-label' htmlFor="trip_end_date">Trip Date (End):</label>
-                <input className='form-input' type="date" name="trip_end_date" onChange={handleInputChangeFunction} placeholder="e.g. 01/01/2021" required/>
+                <input className='form-date' type="date" name="trip_end_date" onChange={handleInputChangeFunction} placeholder="e.g. 01/01/2021" required/>
             </div>
 
             <div className='form-input-container'>

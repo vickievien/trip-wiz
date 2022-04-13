@@ -26,19 +26,23 @@ body {
 }
 
 .nav-container {
-  padding: 10px 20px;
+  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(222, 222, 222);
+  background-color: rgba(255, 255, 255, 0.822);
+  /* border-bottom: 0.1px solid rgba(119, 212, 186, 0.574); */
+  position: fixed;
+  width: 100%;
+  z-index: 1;
 }
 
 .logo-link {
-
+  width: 100px;
 }
 
 .logo-img {
-
+  width: 100%;
 }
 
 .nav-list {
@@ -50,6 +54,7 @@ body {
 
 .nav-list-item {
   list-style: none;
+  font-size: 14px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -63,13 +68,14 @@ body {
 /* REVIEWS SECTION */
 .reviews-main-container {
   padding: 20px;
+  position: relative;
 }
 
 .review-section-title-container {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  padding: 15px 0;
+  padding: 75px 0 15px 0;
   border-bottom: 0.1px solid rgb(0, 0, 0);
 }
 
@@ -87,6 +93,7 @@ i {
   grid-template-rows: auto;
   gap: 20px;
   padding: 40px 0;
+  /* position: relative; */
 }
 
 .review-article-container {
@@ -127,13 +134,17 @@ i {
 
 /* REVIEW MODAL */
 .review-modal-container {
-  position: relative;
+  position: fixed;
+  top: 60px;
+  left: -5px;
+  min-height: calc(100vh - 60px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 20px;
   padding: 40px;
+  background-color: white;
 }
 
 .review-modal-close {
@@ -149,10 +160,7 @@ i {
 }
 
 .review-modal-text-container {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
+
 }
 
 .review-modal-text-container .review-text-location {
@@ -198,10 +206,86 @@ i {
   cursor: pointer;
 }
 
+.new-review-modal-container {
+  position: relative;
+  margin-top: 30px;
+}
+
+.new-modal-close {
+  position: absolute;
+  right: 15px;
+  top: -15px;
+}
+
+.new-review-form {
+  padding: 5px 15px;
+}
+
+.form-input-container {
+  padding: 5px 0;
+}
+
+.form-label {
+  display: block;
+  padding-bottom: 5px;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.form-input {
+  display: block;
+  width: 100%;
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: 0.5px solid rgb(154, 154, 154);
+}
+
+.form-date {
+  display: block;
+  width: 100%;
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: 0.5px solid rgb(154, 154, 154);
+  font-family: 'Lato', sans-serif;
+}
+
+.form-textarea {
+  min-height: 100px;
+  width: 100%;
+  resize: vertical;
+  overflow: auto;
+  font-family: 'Lato', sans-serif;
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+.submit {
+  margin-top: 10px;
+  padding: 5px 15px;
+  border-radius: 20px;
+  border: 0.5px solid rgb(154, 154, 154);
+
+}
+
 @media only screen and (min-width: 768px) {
 
 }
 
 @media only screen and (min-width: 768px) {
 
+}
+
+/* EDIT MODAL */
+.edit-review-modal-container {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  padding: 10px 35px;
+  background-color: white;
 }

@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import ReviewModalContainerComponent from './reviewModalContainerComponent';
+import '../../../App.css';
 
 const ReviewArticleComponent = (props) => {
 
@@ -8,7 +9,20 @@ const ReviewArticleComponent = (props) => {
         const getOneReviewInfoResponse = await fetch(`https://trip-wiz-api.herokuapp.com/api/reviews/${reviewId}`)
         const getOneReviewInfoData = await getOneReviewInfoResponse.json()
         setOneReviewInfo(getOneReviewInfoData);
+        // setUpdateReview(getOneReviewInfoData);
     }
+
+
+    // const [updateReview, setUpdateReview] = useState({
+    //     id: oneReviewInfo.id,
+    //     reviewer_name: oneReviewInfo.reviewer_name,
+    //     city: oneReviewInfo.city,
+    //     country: oneReviewInfo.country,
+    //     trip_start_date: oneReviewInfo.trip_start_date,
+    //     trip_end_date: oneReviewInfo.trip_end_date,
+    //     review: oneReviewInfo.review,
+    //     img: oneReviewInfo.img,
+    // })
 
     const reviews = props.reviews.map(review => {
         return (
@@ -30,7 +44,7 @@ const ReviewArticleComponent = (props) => {
         <>
             {reviews}
             {props.showReviewModal ? 
-                <ReviewModalContainerComponent toggleReviewModalFunction={props.toggleReviewModalFunction} oneReviewInfo={oneReviewInfo} deleteReviewFunction={props.deleteReviewFunction}/>
+                <ReviewModalContainerComponent toggleReviewModalFunction={props.toggleReviewModalFunction} oneReviewInfo={oneReviewInfo} deleteReviewFunction={props.deleteReviewFunction} updateReviewFunction={props.updateReviewFunction} setOneReviewInfo={setOneReviewInfo} />
             :
                 ""
             }

@@ -1,6 +1,30 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import EditReviewContainerComponent from '../editReviewModal/editReviewContainerComponent';
+import '../../../App.css';
 
 const ReviewModalContainerComponent = (props) => {
+    const [showEditReviewModal, setShowEditReviewModal] = useState(false)
+    const toggleShowEditReviewModalFunction = () => {
+        setShowEditReviewModal(!showEditReviewModal)
+        // console.log(props.oneReviewInfo)
+    }
+
+    // const [updateReview, setUpdateReview] = useState({
+    //     reviewer_name: props.oneReviewInfo.reviewer_name,
+    //     city: props.oneReviewInfo.city,
+    //     country: props.oneReviewInfo.country,
+    //     trip_start_date: props.oneReviewInfo.trip_start_date,
+    //     trip_end_date: props.oneReviewInfo.trip_end_date,
+    //     review: props.oneReviewInfo.review,
+    //     img: props.oneReviewInfo.img,
+    //     id: props.oneReviewInfo.id
+    // })
+
+    // console.log(props.updateReview)
+    // console.log(`props.oneReview: ${props.oneReviewInfo}`)
+    // const [updateReview, setUpdateReview] = useState(props.oneReviewInfo)
+
+    console.log(props.oneReviewInfo)
 
     return (
         <>
@@ -16,7 +40,11 @@ const ReviewModalContainerComponent = (props) => {
                 </section>
             </div>
             <div className='review-modal-button-container'>
-                <a className='review-modal-button update'><i className="far fa-edit"></i>Update</a>
+                {showEditReviewModal ?
+                <EditReviewContainerComponent toggleShowEditReviewModalFunction={toggleShowEditReviewModalFunction} oneReviewInfo={props.oneReviewInfo} updateReviewFunction={props.updateReviewFunction} setOneReviewInfo={props.setOneReviewInfo} />
+                :
+                <a className='review-modal-button update' onClick={toggleShowEditReviewModalFunction} ><i className="far fa-edit"></i>Update</a>
+                }
                 <a className='review-modal-button delete' onClick={() => props.deleteReviewFunction(props.oneReviewInfo.id)}><i className="far fa-trash-alt"></i>Delete</a>
             </div>
         </article>

@@ -36,10 +36,22 @@ const ReviewsContainerComponent = () => {
     }    
 
     // UPDATE REVIEWS
+    const updateReviewFunction = async(reviewToUpdate) => {
+        const updateReviewResponse = await fetch(`https://trip-wiz-api.herokuapp.com/api/reviews/${reviewToUpdate.id}/`, {
+            method: "PUT",
+            body: JSON.stringify(reviewToUpdate),
+            headers: {
+                "Content-type": "application/json"
+            }
+        })
+        const updateReviewData = await updateReviewResponse.json();
+        const newReviewsWithUpdates = reviews.map(n => n.id === reviewToUpdate.id ? reviewToUpdate : n)
+        setReviews(newReviewsWithUpdates)
+    }
 
     // DELETE REVIEWS
     const deleteReviewFunction = async(deleteReviewId) => {
-        const deleteReviewResponse = await fetch(`https://trip-wiz-api.herokuapp.com/api/reviews/${deleteReviewId}`, {
+        const deleteReviewResponse = await fetch(`https://trip-wiz-api.herokuapp.com/api/reviews/${deleteReviewId}/`, {
             method: "DELETE",
         });
         console.log('delete functioning working')
@@ -47,7 +59,6 @@ const ReviewsContainerComponent = () => {
         setReviews(newReviews)
         toggleReviewModalFunction()
     }
-
 
 
     // USE EFFECT FOR GET REVIEWS
@@ -67,7 +78,7 @@ const ReviewsContainerComponent = () => {
         <main className='reviews-main-container'>
             <ReviewSectionTitleContainerComponent toggleNewReviewModal={toggleNewReviewModal} />
             <NewReviewModalContainerComponent toggleNewReviewModal={toggleNewReviewModal} showNewReviewModal={showNewReviewModal} createNewReviewFunction={createNewReviewFunction}/>
-            <ReviewsGridContainerComponent reviews={reviews} deleteReviewFunction={deleteReviewFunction} toggleReviewModalFunction={toggleReviewModalFunction} showReviewModal={showReviewModal} />
+            <ReviewsGridContainerComponent reviews={reviews} deleteReviewFunction={deleteReviewFunction} toggleReviewModalFunction={toggleReviewModalFunction} showReviewModal={showReviewModal} updateReviewFunction={updateReviewFunction} />
         </main>
     )
 }
