@@ -30,7 +30,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.822);
+  background-color: rgb(255, 255, 255);
   /* border-bottom: 0.1px solid rgba(119, 212, 186, 0.574); */
   position: fixed;
   width: 100%;
@@ -58,10 +58,15 @@ body {
 }
 
 @media only screen and (min-width: 768px) {
-
+  .logo-link {
+    width: 125px;
+  }
+  .nav-list-item {
+    font-size: 16px;
+  }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1200px) {
 
 }
 
@@ -77,10 +82,6 @@ body {
   align-items: baseline;
   padding: 75px 0 15px 0;
   border-bottom: 0.1px solid rgb(0, 0, 0);
-}
-
-.reviews-title {
-
 }
 
 i {
@@ -194,11 +195,63 @@ i {
 }
 
 @media only screen and (min-width: 768px) {
-
+  .review-section-title-container {
+    width: 75%;
+    margin: 0 auto;
+  }
+  .reviews-grid-container {
+    width: 75%;
+    margin: 0 auto;
+  }
+  .review-img {
+    width: 90px;
+    height: 90px;
+  }
+  .review-modal-img {
+    width: 250px;
+    height: 250px;
+    border-radius: 250px;
+  }
+  .review-modal-text {
+    width: 50%;
+  }
+  .review-modal-container {
+    padding-top: 0;
+  }
 }
 
-@media only screen and (min-width: 768px) {
-
+@media only screen and (min-width: 1200px) {  
+  .reviews-title {
+    font-size: 30px;
+  }
+  .review-section-title-container {
+    width: 50%;
+  }
+  .reviews-grid-container {
+    width: 50%;
+  }
+  .review-img {
+    width: 110px;
+    height: 110px;
+  }
+  .review-text-location {
+    font-size: 20px;
+  }
+  .review-text-review {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .review-more-button {
+    font-size: 16px;
+  }
+  .review-modal-img {
+    width: 275px;
+    height: 275px;
+    border-radius: 300px;
+  }
+  .review-modal-text {
+    width: 25%;
+  }
 }
 
 /* NEW REVIEW SECTION */
@@ -273,7 +326,15 @@ textarea:focus {
 }
 
 @media only screen and (min-width: 768px) {
-
+  .new-review-form {
+    width: 75%;
+    margin: 0 auto;
+    /* padding: 5px 0; */
+  }
+  .new-modal-close {
+    right: 100px;
+    top: -15px;
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -288,4 +349,39 @@ textarea:focus {
   width: 100%;
   padding: 10px 35px;
   background-color: white;
+  height: calc(100vh - 60px);
+}
+.edit-modal-close {
+  position: absolute;
+  right: 30px;
+  top: -5px;
+}
+
+@media only screen and (min-width: 768px) {
+  .edit-review-modal-container {
+    position: fixed;
+    top: 80px;
+    height: calc(100vh - 65px);
+  }
+  .edit-review-modal-container .form-input-container {
+    width: 75%;
+    margin: 0 auto;
+  }
+  .edit-review-modal-form-container {
+    margin-top: 80px;
+  }
+  .edit-modal-close {
+    right: 120px;
+    top: 55px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .edit-review-modal-container .form-input-container {
+    width: 30%;
+  }
+  .edit-modal-close {
+    right: 530px;
+    /* top: 55px; */
+  }
 }

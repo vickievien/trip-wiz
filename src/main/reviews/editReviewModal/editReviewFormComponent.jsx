@@ -62,7 +62,9 @@ const EditReviewFormComponent = (props) => {
                 <input className='form-input' type="text" name="img" onChange={handleInputChangeFunction} defaultValue={props.oneReviewInfo.img}/>
             </div>
 
-            <input className='submit' type="submit" value="Edit"/>
+            <div className='form-input-container'>
+                <input className='submit' type="submit" value="Update"/>
+            </div>
         </form>
     )
 }

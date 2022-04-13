@@ -6,7 +6,7 @@ const ReviewArticleComponent = (props) => {
 
     const [oneReviewInfo, setOneReviewInfo] = useState({})
     const getOneReviewFunction = async(reviewId) => {
-        const getOneReviewInfoResponse = await fetch(`https://trip-wiz-api.herokuapp.com/api/reviews/${reviewId}`)
+        const getOneReviewInfoResponse = await fetch(`https://trip-wiz-api.herokuapp.com/api/reviews/${reviewId}/`)
         const getOneReviewInfoData = await getOneReviewInfoResponse.json()
         setOneReviewInfo(getOneReviewInfoData);
         // setUpdateReview(getOneReviewInfoData);
