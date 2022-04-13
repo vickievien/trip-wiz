@@ -6,7 +6,7 @@ const NavContainerComponent = () => {
     return (
         <nav className='nav-container'>
             <a className='logo-link' href="#">
-                <img className='logo-img' src="/../../travel-wiz-logo.svg" alt="logo-here" />
+                <img className='logo-img' src="/../../trip-wiz-logo.svg" alt="logo-here" />
             </a>
             <NavListComponent />
         </nav>

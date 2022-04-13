@@ -21,24 +21,19 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
-.App {
-  /* text-align: center; */
-}
-
 .nav-container {
   padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: rgb(255, 255, 255);
-  /* border-bottom: 0.1px solid rgba(119, 212, 186, 0.574); */
   position: fixed;
   width: 100%;
   z-index: 1;
 }
 
 .logo-link {
-  width: 100px;
+  width: 75px;
 }
 
 .logo-img {
@@ -59,15 +54,11 @@ body {
 
 @media only screen and (min-width: 768px) {
   .logo-link {
-    width: 125px;
+    width: 100px;
   }
   .nav-list-item {
     font-size: 16px;
   }
-}
-
-@media only screen and (min-width: 1200px) {
-
 }
 
 /* REVIEWS SECTION */
@@ -382,6 +373,11 @@ textarea:focus {
   }
   .edit-modal-close {
     right: 530px;
-    /* top: 55px; */
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .edit-modal-close {
+    right: 530px;
   }
 }
