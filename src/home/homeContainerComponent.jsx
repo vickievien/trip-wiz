@@ -16,7 +16,10 @@ const HomeContainerComponent = () => {
                     {/* <h2 className='home-text-title'>Trip Wiz</h2> */}
                     <h3 className='home-text-subtitle'>The pit-stop before your final destination decision.</h3>
                     <p className='home-text-caption'>Have vacation time but don't know where to go? See what other travelers have to say about the destinations that make them want to stay.</p>
-                    <Link className="home-review-button" to="/reviews">Reviews<i className="fas fa-long-arrow-alt-right"></i></Link>   
+                    <Link className="home-review-button" to="/reviews">Reviews</Link> 
+
+
+                    {/* <Link className="home-review-button" to="/reviews">Reviews<i className="fas fa-long-arrow-alt-right"></i></Link>    */}
                 </section>
             </main>
             <FooterComponent />
