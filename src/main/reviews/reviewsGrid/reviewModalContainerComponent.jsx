@@ -24,7 +24,7 @@ const ReviewModalContainerComponent = (props) => {
     // console.log(`props.oneReview: ${props.oneReviewInfo}`)
     // const [updateReview, setUpdateReview] = useState(props.oneReviewInfo)
 
-    console.log(props.oneReviewInfo)
+    // console.log(props.oneReviewInfo)
 
     return (
         <>

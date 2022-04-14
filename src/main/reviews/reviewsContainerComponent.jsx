@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import '../../App.css';
+// import { Routes, Route, BrowserRouter, Link } from 'react-router-dom';
 import NewReviewModalContainerComponent from './newReviewModal/newReviewModalContainerComponent';
 import ReviewSectionTitleContainerComponent from './reviewSectionHeading/reviewSectionTitleContainerComponent';
 import ReviewsGridContainerComponent from './reviewsGrid/reviewsGridContainerComponent';
-
+import { Link } from 'react-router-dom';
 
 const ReviewsContainerComponent = () => {
     // USE STATE HERE
@@ -68,7 +69,7 @@ const ReviewsContainerComponent = () => {
         async function getReviewsFunction() {
             const getReviewsResponse = await fetch('https://trip-wiz-api.herokuapp.com/api/reviews/');
             const getReviewsData = await getReviewsResponse.json();
-            console.log(getReviewsData);
+            // console.log(getReviewsData);
             setReviews(getReviewsData);
         }
         getReviewsFunction();
@@ -76,9 +77,21 @@ const ReviewsContainerComponent = () => {
 
     return (
         <main className='reviews-main-container'>
-            <ReviewSectionTitleContainerComponent toggleNewReviewModal={toggleNewReviewModal} />
-            <NewReviewModalContainerComponent toggleNewReviewModal={toggleNewReviewModal} showNewReviewModal={showNewReviewModal} createNewReviewFunction={createNewReviewFunction}/>
+            <ReviewSectionTitleContainerComponent toggleNewReviewModal={toggleNewReviewModal}  />
+            
+            
+            <NewReviewModalContainerComponent toggleNewReviewModal={toggleNewReviewModal} showNewReviewModal={showNewReviewModal} createNewReviewFunction={createNewReviewFunction}/>            
+
+            
+            
+            
             <ReviewsGridContainerComponent reviews={reviews} deleteReviewFunction={deleteReviewFunction} toggleReviewModalFunction={toggleReviewModalFunction} showReviewModal={showReviewModal} updateReviewFunction={updateReviewFunction} />
+        
+
+
+        
+        
+        
         </main>
     )
 }

@@ -50,6 +50,48 @@ body {
 .nav-list-item {
   list-style: none;
   font-size: 14px;
+  text-transform: lowercase;
+  letter-spacing: 0.04rem;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 2px;
+}
+
+.nav-list-item:after {
+  opacity: 1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1.5px;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(223, 153, 13);
+  transition: opacity 300ms, transform 300ms;
+  transform: translate3d(-100%, 0, 0);
+}
+
+.nav-list-item:hover:after,
+.nav-list-item:focus:after {
+  transform: translate3d(0, 0, 0);
+}
+
+.router-link,
+.router-link:visited {
+  color: black;
+  text-decoration: none;
+}
+
+/* FOOTER */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-top: 1px solid var(--whitesmoke);
+  background-color: rgb(243, 243, 243);
+  position: relative;
+  font-size: 12px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -137,6 +179,7 @@ i {
   gap: 20px;
   padding: 40px;
   background-color: white;
+  width: 100%;
 }
 
 .review-modal-close {
@@ -328,8 +371,14 @@ textarea:focus {
   }
 }
 
-@media only screen and (min-width: 768px) {
-
+@media only screen and (min-width: 1200px) {
+  .new-review-form {
+    width: 50%;
+  }
+  .new-modal-close {
+    right: 400px;
+    top: -15px;
+  }
 }
 
 /* EDIT MODAL */
@@ -381,3 +430,88 @@ textarea:focus {
     right: 530px;
   }
 }
+
+/* HOME PAGE */
+.home-main {
+  width: 100%;
+  height: calc(100vh - 50px);
+  /* top: 60px; */
+  background-image: url("https://i.imgur.com/ZD0jbSX.jpg");
+  /* opacity: 0.5; */
+  background-size: cover;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+
+.home-main:before {
+  position: absolute;
+  content: '';
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.608);
+}
+
+.home-text-container {
+  position: relative;
+  margin: 0 20px;
+}
+
+.home-text-subtitle {
+  text-transform: lowercase;
+  line-height: 28px;
+  letter-spacing: 0.02rem;
+}
+
+.home-text-caption {
+  margin: 10px 0;
+  line-height: 28px;
+  font-weight: 300;
+  text-transform: lowercase;
+  width: 50%;
+}
+
+.home-review-button,
+.home-review-button:visited {
+  text-decoration: none;
+  text-transform: lowercase;
+  color: black;
+  border-radius: 20px;
+  border: 0.5px solid black;
+  padding: 5px 15px;
+  display: block;
+  width: fit-content;
+  transition: transform 0.5s ease-in-out;
+}
+
+.home-review-button:hover {
+  transform: translateX(5px);
+}
+
+.fa-long-arrow-alt-right {
+  margin-left: 5px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.fa-long-arrow-alt-right:hover {
+  transform: translateX(5px);
+}
+
+/* .home-hero {
+  border-radius: 50px;
+  background-image: url("https://i.imgur.com/t25leIF.jpg");
+  background-size: cover;
+  background-position: 0% 20%;
+  width: 100%;
+  height: 100%;
+} */
+
+
+
+/* .home-header .router-link,
+.home-header .router-link:visited {
+  color: white;
+} */
