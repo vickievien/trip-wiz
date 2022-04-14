@@ -1,17 +1,16 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import NavListComponent from './navListComponent';
 import '../../App.css';
 
 const NavContainerComponent = () => {
     return (
         <nav className='nav-container'>
-            <a className='logo-link' href="#">
+            <Link className='logo-link' to="/">
                 <img className='logo-img' src="/../../trip-wiz-logo.svg" alt="logo-here" />
-            </a>
+            </Link>
             <NavListComponent />
         </nav>
-        
     )
 }
 

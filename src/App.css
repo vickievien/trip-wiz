@@ -19,6 +19,7 @@ body {
   padding: 0 auto;
   height: 100vh;
   font-family: 'Lato', sans-serif;
+  cursor: url(/public/trip-wiz-favicon-cursor.svg), auto;
 }
 
 .nav-container {
