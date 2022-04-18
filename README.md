@@ -1,4 +1,6 @@
 ![alt text](https://i.imgur.com/P5cMDO2.png "Trip Wiz Logo")
+
+
 The pit-stop before your final destination decision. See what other travelers have to say about the places they've been to.
 
 #### Created By: Vickie Vien
