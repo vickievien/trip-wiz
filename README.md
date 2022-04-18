@@ -1,6 +1,4 @@
 ![alt text](https://i.imgur.com/P5cMDO2.png "Trip Wiz Logo")
-
-# Trip Wiz 
 The pit-stop before your final destination decision. See what other travelers have to say about the places they've been to.
 
 #### Created By: Vickie Vien
@@ -12,7 +10,7 @@ The pit-stop before your final destination decision. See what other travelers ha
 
 
 ## User Flow:
-![alt text](https://i.imgur.com/MlTTGFH.png "Trip Wiz userflow")
+![alt text](https://i.imgur.com/PvQHokE.png "Trip Wiz userflow")
 
 
 ## Tech Stack:
