@@ -43,3 +43,12 @@ Utilized a travel reviews model in which users are able to create, edit, and del
 - Implementation of user login
 - Third Party Travel API for additional trip recommendations
 - Reversal of postings
+
+
+
+## Capstone Add-Ons:
+- Revamp home page. More animations and styling.
+- Add a filter/search bar on reviews by countries
+- Add a countries fact page with a search bar by country (use REST Countries API for country data and UnSplash API for country photo gallery)
+- Stretch goal: Add Google Maps API to countries fact page
+- Stretch goal: Add a restaurant recommendations page (via YELP Fusion API) with search by countries
